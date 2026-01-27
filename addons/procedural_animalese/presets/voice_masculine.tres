@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimaleseVoice" format=3 uid="uid://c4uw36kq53wpm"]
+
+[ext_resource type="Script" uid="uid://8hnsnrtuq0tl" path="res://addons/procedural_animalese/runtime/animalese_voice.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+voice_name = "Masculine"
+pitch_base_hz = 120.0
+pitch_jitter = 0.05
+char_duration_s = 0.065
+vibrato_rate_hz = 2.0
+vibrato_depth = 0.05
+output_gain = 1.0

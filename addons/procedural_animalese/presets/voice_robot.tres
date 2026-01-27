@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimaleseVoice" format=3 uid="uid://bh51v6scuyj8w"]
+
+[ext_resource type="Script" uid="uid://8hnsnrtuq0tl" path="res://addons/procedural_animalese/runtime/animalese_voice.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+voice_name = "Robot"
+pitch_base_hz = 180.0
+pitch_jitter = 0.0
+char_duration_s = 0.07
+output_gain = 1.0
+breath_noise_level = 0.0
+prosody_strength = 0.2

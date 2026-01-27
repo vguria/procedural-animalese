@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimaleseVoice" format=3 uid="uid://ctvx4qwghmltq"]
+
+[ext_resource type="Script" uid="uid://8hnsnrtuq0tl" path="res://addons/procedural_animalese/runtime/animalese_voice.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+voice_name = "Feminine"
+pitch_base_hz = 240.0
+vibrato_rate_hz = 4.0
+vibrato_depth = 0.08
+output_gain = 1.0
+breath_noise_level = 0.1
+prosody_strength = 0.7

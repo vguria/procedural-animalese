@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Speech bubble background -->
+  <path d="M2 2h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6l-3 3v-3H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" fill="#478cbf"/>
+  <!-- Waveform -->
+  <path d="M4 7h1v2H4zM6 5h1v6H6zM8 4h1v8H8zM10 5h1v6h-1zM12 7h1v2h-1z" fill="#ffffff"/>
+</svg>

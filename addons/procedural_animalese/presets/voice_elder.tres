@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AnimaleseVoice" format=3 uid="uid://ck1gaaxpvx0d6"]
+
+[ext_resource type="Script" uid="uid://8hnsnrtuq0tl" path="res://addons/procedural_animalese/runtime/animalese_voice.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+voice_name = "Elder"
+pitch_base_hz = 110.0
+pitch_jitter = 0.07
+char_duration_s = 0.075
+vibrato_rate_hz = 4.0
+vibrato_depth = 0.1
+breath_noise_level = 0.25
+prosody_strength = 0.5

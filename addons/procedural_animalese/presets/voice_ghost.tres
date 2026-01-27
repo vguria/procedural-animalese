@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AnimaleseVoice" format=3 uid="uid://crnigv5km27cg"]
+
+[ext_resource type="Script" uid="uid://8hnsnrtuq0tl" path="res://addons/procedural_animalese/runtime/animalese_voice.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+voice_name = "Ghost"
+pitch_base_hz = 200.0
+pitch_jitter = 0.04
+char_duration_s = 0.08
+vibrato_rate_hz = 3.0
+vibrato_depth = 0.12
+output_gain = 0.8
+breath_noise_level = 0.4
+whisper_amount = 0.6
+prosody_strength = 0.4

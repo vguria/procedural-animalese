@@ -1,0 +1,857 @@
+# Procedural Animalese - Translation Template
+# Copyright (C) 2026 Procedural Animalese contributors
+# This file is distributed under the same license as the Procedural Animalese addon.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Procedural Animalese 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-26 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Editor plugin dock name
+#: procedural_animalese_editor_plugin.gd:87
+msgid "Voice Editor"
+msgstr ""
+
+#. Voice Preset Browser
+#: voice_preset_browser.gd:44
+msgid "Voice Preset Browser"
+msgstr ""
+
+#: voice_preset_browser.gd:73
+msgid "Search:"
+msgstr ""
+
+#: voice_preset_browser.gd:77
+msgid "Filter by name..."
+msgstr ""
+
+#: voice_preset_browser.gd:85
+msgid "Tags"
+msgstr ""
+
+#: voice_preset_browser.gd:86
+msgid "Filter by voice type"
+msgstr ""
+
+#: voice_preset_browser.gd:88 voice_wizard.gd:314
+msgid "Masculine"
+msgstr ""
+
+#: voice_preset_browser.gd:89 voice_wizard.gd:315
+msgid "Feminine"
+msgstr ""
+
+#: voice_preset_browser.gd:90 voice_wizard.gd:316
+msgid "Child"
+msgstr ""
+
+#: voice_preset_browser.gd:91 voice_wizard.gd:317
+msgid "Elder"
+msgstr ""
+
+#: voice_preset_browser.gd:92 voice_wizard.gd:318
+msgid "Robot"
+msgstr ""
+
+#: voice_preset_browser.gd:93 voice_wizard.gd:319
+msgid "Monster"
+msgstr ""
+
+#: voice_preset_browser.gd:94 voice_wizard.gd:320
+msgid "Ghost"
+msgstr ""
+
+#: voice_preset_browser.gd:95 voice_wizard.gd:321
+msgid "Whisper"
+msgstr ""
+
+#: voice_preset_browser.gd:101
+msgid "Sort"
+msgstr ""
+
+#: voice_preset_browser.gd:102
+msgid "Sort presets"
+msgstr ""
+
+#: voice_preset_browser.gd:104
+msgid "Name (A-Z)"
+msgstr ""
+
+#: voice_preset_browser.gd:105
+msgid "Name (Z-A)"
+msgstr ""
+
+#: voice_preset_browser.gd:106
+msgid "Pitch (Low-High)"
+msgstr ""
+
+#: voice_preset_browser.gd:107
+msgid "Pitch (High-Low)"
+msgstr ""
+
+#: voice_preset_browser.gd:108
+msgid "Path"
+msgstr ""
+
+#: voice_preset_browser.gd:115
+msgid "Refresh"
+msgstr ""
+
+#: voice_preset_browser.gd:116
+msgid "Rescan project for voice presets"
+msgstr ""
+
+#: voice_preset_browser.gd:128 voice_wizard.gd:219
+msgid "Preview text:"
+msgstr ""
+
+#: voice_preset_browser.gd:154 voice_preset_browser.gd:175
+msgid "Scanning..."
+msgstr ""
+
+#: voice_preset_browser.gd:199
+msgid "%d presets found"
+msgstr ""
+
+#: voice_preset_browser.gd:345
+msgid "Showing %d of %d presets"
+msgstr ""
+
+#: voice_preset_browser.gd:421 voice_editor_dock.gd:512
+msgid "Play"
+msgstr ""
+
+#: voice_preset_browser.gd:427
+msgid "Load"
+msgstr ""
+
+#: voice_preset_browser.gd:450
+msgid "Bass"
+msgstr ""
+
+#: voice_preset_browser.gd:452
+msgid "Baritone"
+msgstr ""
+
+#: voice_preset_browser.gd:454
+msgid "Tenor"
+msgstr ""
+
+#: voice_preset_browser.gd:456
+msgid "Alto"
+msgstr ""
+
+#: voice_preset_browser.gd:458
+msgid "Soprano"
+msgstr ""
+
+#: voice_preset_browser.gd:460
+msgid "High soprano"
+msgstr ""
+
+#: voice_preset_browser.gd:462
+msgid "Very high"
+msgstr ""
+
+#. Voice Creation Wizard
+#: voice_wizard.gd:158
+msgid "Voice Creation Wizard"
+msgstr ""
+
+#: voice_wizard.gd:169 voice_wizard.gd:744
+msgid "New Voice"
+msgstr ""
+
+#: voice_wizard.gd:178
+msgid "Create Voice"
+msgstr ""
+
+#: voice_wizard.gd:193
+msgid "Step 1 of 4: Basic Information"
+msgstr ""
+
+#: voice_wizard.gd:224
+msgid "Hello! This is a test of my new voice."
+msgstr ""
+
+#: voice_wizard.gd:229 voice_editor_dock.gd:1063
+msgid "Preview"
+msgstr ""
+
+#: voice_wizard.gd:241
+msgid "< Previous"
+msgstr ""
+
+#: voice_wizard.gd:246
+msgid "Next >"
+msgstr ""
+
+#: voice_wizard.gd:259
+msgid "Basic Information"
+msgstr ""
+
+#: voice_wizard.gd:259
+msgid "Pitch & Timing"
+msgstr ""
+
+#: voice_wizard.gd:259
+msgid "Voice Character"
+msgstr ""
+
+#: voice_wizard.gd:259
+msgid "Summary & Save"
+msgstr ""
+
+#: voice_wizard.gd:260
+msgid "Step %d of %d: %s"
+msgstr ""
+
+#: voice_wizard.gd:283
+msgid "Choose a name and starting preset for your voice."
+msgstr ""
+
+#: voice_wizard.gd:292
+msgid "Voice Name:"
+msgstr ""
+
+#: voice_wizard.gd:299
+msgid "Enter a name for this voice..."
+msgstr ""
+
+#: voice_wizard.gd:308
+msgid "Start from:"
+msgstr ""
+
+#: voice_wizard.gd:313
+msgid "Custom (blank)"
+msgstr ""
+
+#: voice_wizard.gd:342
+msgid "Adjust the base pitch and speaking speed."
+msgstr ""
+
+#: voice_wizard.gd:347 voice_editor_dock.gd:447
+msgid "Randomize"
+msgstr ""
+
+#: voice_wizard.gd:353
+msgid "Base Pitch (Hz):"
+msgstr ""
+
+#: voice_wizard.gd:384
+msgid "Character Duration (seconds):"
+msgstr ""
+
+#: voice_wizard.gd:410
+msgid "Pitch Variation (jitter):"
+msgstr ""
+
+#: voice_wizard.gd:442
+msgid "Fine-tune breathiness, whisper, and vibrato."
+msgstr ""
+
+#: voice_wizard.gd:453
+msgid "Breathiness:"
+msgstr ""
+
+#: voice_wizard.gd:479
+msgid "Whisper Amount:"
+msgstr ""
+
+#: voice_wizard.gd:505
+msgid "Vibrato Rate (Hz):"
+msgstr ""
+
+#: voice_wizard.gd:531
+msgid "Vibrato Depth:"
+msgstr ""
+
+#: voice_wizard.gd:560
+msgid "Review your voice settings and save the resource."
+msgstr ""
+
+#: voice_wizard.gd:575
+msgid "Save Location:"
+msgstr ""
+
+#: voice_wizard.gd:584
+msgid "res://path/to/voice.tres"
+msgstr ""
+
+#: voice_wizard.gd:588 voice_editor_dock.gd:494
+msgid "Browse..."
+msgstr ""
+
+#: voice_wizard.gd:597
+msgid "Voice Summary"
+msgstr ""
+
+#: voice_wizard.gd:598
+msgid "Name"
+msgstr ""
+
+#: voice_wizard.gd:599
+msgid "Base Pitch"
+msgstr ""
+
+#: voice_wizard.gd:600
+msgid "Duration"
+msgstr ""
+
+#: voice_wizard.gd:601
+msgid "Pitch Jitter"
+msgstr ""
+
+#: voice_wizard.gd:602 voice_editor_dock.gd:602
+msgid "Breathiness"
+msgstr ""
+
+#: voice_wizard.gd:603 voice_editor_dock.gd:603
+msgid "Whisper"
+msgstr ""
+
+#: voice_wizard.gd:606 voice_wizard.gd:608
+msgid "Vibrato"
+msgstr ""
+
+#: voice_wizard.gd:606
+msgid "depth"
+msgstr ""
+
+#: voice_wizard.gd:608
+msgid "Off"
+msgstr ""
+
+#: voice_wizard.gd:616
+msgid "Start with default values and customize everything yourself."
+msgstr ""
+
+#: voice_wizard.gd:618
+msgid "A deep, resonant voice with lower pitch (120-180 Hz). Good for adult male characters."
+msgstr ""
+
+#: voice_wizard.gd:620
+msgid "A higher-pitched voice (220-320 Hz) with slightly more breathiness. Good for adult female characters."
+msgstr ""
+
+#: voice_wizard.gd:622
+msgid "A high-pitched voice (300-400 Hz) with faster speech and more pitch variation. Good for young characters."
+msgstr ""
+
+#: voice_wizard.gd:624
+msgid "A slower, slightly shaky voice with moderate vibrato. Good for elderly characters."
+msgstr ""
+
+#: voice_wizard.gd:626
+msgid "A flat, mechanical voice with no vibrato or jitter. Perfect for AI or robotic characters."
+msgstr ""
+
+#: voice_wizard.gd:628
+msgid "A very low, growling voice (80-120 Hz) with high breathiness. Good for creatures and monsters."
+msgstr ""
+
+#: voice_wizard.gd:630
+msgid "An ethereal, whispery voice with high breathiness and slow vibrato. Good for supernatural characters."
+msgstr ""
+
+#: voice_wizard.gd:632
+msgid "A soft, hushed voice using mostly breath sounds. Good for secretive or intimate dialogue."
+msgstr ""
+
+#: voice_wizard.gd:639
+msgid "Very deep (bass)"
+msgstr ""
+
+#: voice_wizard.gd:641
+msgid "Deep (baritone)"
+msgstr ""
+
+#: voice_wizard.gd:643
+msgid "Low (tenor)"
+msgstr ""
+
+#: voice_wizard.gd:645
+msgid "Medium (alto)"
+msgstr ""
+
+#: voice_wizard.gd:647
+msgid "High (soprano)"
+msgstr ""
+
+#: voice_wizard.gd:649
+msgid "Very high (child)"
+msgstr ""
+
+#: voice_wizard.gd:651
+msgid "Extremely high"
+msgstr ""
+
+#. Voice Editor Dock - Toolbar
+#: voice_editor_dock.gd:488
+msgid "New..."
+msgstr ""
+
+#: voice_editor_dock.gd:489
+msgid "Open voice creation wizard"
+msgstr ""
+
+#: voice_editor_dock.gd:495
+msgid "Browse voice presets in project"
+msgstr ""
+
+#: voice_editor_dock.gd:500
+msgid "Save"
+msgstr ""
+
+#: voice_editor_dock.gd:501
+msgid "Save voice resource"
+msgstr ""
+
+#: voice_editor_dock.gd:506
+msgid "Inspector"
+msgstr ""
+
+#: voice_editor_dock.gd:507
+msgid "Edit voice in Inspector panel"
+msgstr ""
+
+#: voice_editor_dock.gd:513
+msgid "Preview voice with sample text"
+msgstr ""
+
+#: voice_editor_dock.gd:532
+msgid "Voice name:"
+msgstr ""
+
+#: voice_editor_dock.gd:538
+msgid "Unnamed voice"
+msgstr ""
+
+#: voice_editor_dock.gd:546
+msgid "Preview text..."
+msgstr ""
+
+#: voice_editor_dock.gd:554
+msgid "Pitch x:"
+msgstr ""
+
+#. Voice Editor Dock - Waveform section
+#: voice_editor_dock.gd:573 voice_editor_dock.gd:1368
+msgid "Waveform"
+msgstr ""
+
+#: voice_editor_dock.gd:586
+msgid "Zoom:"
+msgstr ""
+
+#: voice_editor_dock.gd:600
+msgid "Clear"
+msgstr ""
+
+#. Voice Editor Dock - Tabs
+#: voice_editor_dock.gd:614
+msgid "Main"
+msgstr ""
+
+#: voice_editor_dock.gd:628
+msgid "Formants"
+msgstr ""
+
+#: voice_editor_dock.gd:642
+msgid "Advanced"
+msgstr ""
+
+#. Voice Editor Dock - Parameters section
+#: voice_editor_dock.gd:704 voice_editor_dock.gd:1383
+msgid "Parameters"
+msgstr ""
+
+#: voice_editor_dock.gd:715
+msgid "Base pitch (Hz)"
+msgstr ""
+
+#: voice_editor_dock.gd:716
+msgid "Pitch jitter"
+msgstr ""
+
+#: voice_editor_dock.gd:717
+msgid "Char duration (s)"
+msgstr ""
+
+#: voice_editor_dock.gd:718
+msgid "Consonant mult (x)"
+msgstr ""
+
+#: voice_editor_dock.gd:720
+msgid "Output gain"
+msgstr ""
+
+#: voice_editor_dock.gd:721
+msgid "Breath noise"
+msgstr ""
+
+#: voice_editor_dock.gd:723
+msgid "Vocal tract scale"
+msgstr ""
+
+#: voice_editor_dock.gd:724
+msgid "Vowel formant gain"
+msgstr ""
+
+#: voice_editor_dock.gd:725
+msgid "Fricative formant gain"
+msgstr ""
+
+#: voice_editor_dock.gd:726
+msgid "Stop formant gain"
+msgstr ""
+
+#: voice_editor_dock.gd:727
+msgid "Nasal formant gain"
+msgstr ""
+
+#: voice_editor_dock.gd:729
+msgid "Prosody strength"
+msgstr ""
+
+#: voice_editor_dock.gd:730
+msgid "Question rise"
+msgstr ""
+
+#: voice_editor_dock.gd:731
+msgid "Statement fall"
+msgstr ""
+
+#: voice_editor_dock.gd:732
+msgid "Exclamation boost"
+msgstr ""
+
+#: voice_editor_dock.gd:734
+msgid "Vowel breathiness"
+msgstr ""
+
+#: voice_editor_dock.gd:735
+msgid "Voiced brightness"
+msgstr ""
+
+#: voice_editor_dock.gd:737
+msgid "Segment fade (ms)"
+msgstr ""
+
+#. Voice Editor Dock - Randomization section
+#: voice_editor_dock.gd:743
+msgid "Randomization"
+msgstr ""
+
+#: voice_editor_dock.gd:750
+msgid "Intensity:"
+msgstr ""
+
+#: voice_editor_dock.gd:766
+msgid "Lock pitch"
+msgstr ""
+
+#: voice_editor_dock.gd:771
+msgid "Lock timing"
+msgstr ""
+
+#: voice_editor_dock.gd:776
+msgid "Lock timbre"
+msgstr ""
+
+#: voice_editor_dock.gd:781
+msgid "Lock formants"
+msgstr ""
+
+#: voice_editor_dock.gd:789
+msgid "Seed:"
+msgstr ""
+
+#: voice_editor_dock.gd:802 voice_editor_dock.gd:912
+msgid "Apply"
+msgstr ""
+
+#: voice_editor_dock.gd:807
+msgid "Re-roll"
+msgstr ""
+
+#: voice_editor_dock.gd:815
+msgid "Subtle"
+msgstr ""
+
+#: voice_editor_dock.gd:820
+msgid "Strong"
+msgstr ""
+
+#: voice_editor_dock.gd:825
+msgid "Formants only"
+msgstr ""
+
+#. Voice Editor Dock - Formant section
+#: voice_editor_dock.gd:837
+msgid "Group:"
+msgstr ""
+
+#: voice_editor_dock.gd:845 voice_editor_dock.gd:949
+msgid "Vowel /a/"
+msgstr ""
+
+#: voice_editor_dock.gd:846 voice_editor_dock.gd:950
+msgid "Vowel /e/"
+msgstr ""
+
+#: voice_editor_dock.gd:847 voice_editor_dock.gd:951
+msgid "Vowel /i/"
+msgstr ""
+
+#: voice_editor_dock.gd:848 voice_editor_dock.gd:952
+msgid "Vowel /o/"
+msgstr ""
+
+#: voice_editor_dock.gd:849 voice_editor_dock.gd:953
+msgid "Vowel /u/"
+msgstr ""
+
+#: voice_editor_dock.gd:850 voice_editor_dock.gd:958
+msgid "Fricative /s/"
+msgstr ""
+
+#: voice_editor_dock.gd:851 voice_editor_dock.gd:959
+msgid "Fricative /f/"
+msgstr ""
+
+#: voice_editor_dock.gd:852 voice_editor_dock.gd:960
+msgid "Fricative /x/"
+msgstr ""
+
+#: voice_editor_dock.gd:853 voice_editor_dock.gd:961
+msgid "Stop /p/"
+msgstr ""
+
+#: voice_editor_dock.gd:854 voice_editor_dock.gd:962
+msgid "Stop /t/"
+msgstr ""
+
+#: voice_editor_dock.gd:855 voice_editor_dock.gd:963
+msgid "Stop /k/"
+msgstr ""
+
+#: voice_editor_dock.gd:856 voice_editor_dock.gd:964
+msgid "Nasal /m,n/"
+msgstr ""
+
+#: voice_editor_dock.gd:964
+msgid "Nasal /n/"
+msgstr ""
+
+#: voice_editor_dock.gd:865
+msgid "Copy"
+msgstr ""
+
+#: voice_editor_dock.gd:870
+msgid "Paste"
+msgstr ""
+
+#: voice_editor_dock.gd:875
+msgid "Reset group"
+msgstr ""
+
+#. Voice Editor Dock - Formant presets
+#: voice_editor_dock.gd:886 voice_editor_dock.gd:1667
+msgid "Presets"
+msgstr ""
+
+#: voice_editor_dock.gd:894
+msgid "Preset:"
+msgstr ""
+
+#: voice_editor_dock.gd:899
+msgid "Default"
+msgstr ""
+
+#: voice_editor_dock.gd:900
+msgid "Bright"
+msgstr ""
+
+#: voice_editor_dock.gd:901
+msgid "Dark"
+msgstr ""
+
+#: voice_editor_dock.gd:902
+msgid "Nasal"
+msgstr ""
+
+#: voice_editor_dock.gd:903
+msgid "Very bright"
+msgstr ""
+
+#: voice_editor_dock.gd:904
+msgid "Very dark"
+msgstr ""
+
+#: voice_editor_dock.gd:905
+msgid "Soft"
+msgstr ""
+
+#: voice_editor_dock.gd:906
+msgid "Focused"
+msgstr ""
+
+#: voice_editor_dock.gd:907
+msgid "Wide (low Q)"
+msgstr ""
+
+#: voice_editor_dock.gd:908
+msgid "Metallic"
+msgstr ""
+
+#. Voice Editor Dock - Formant grid headers
+#: voice_editor_dock.gd:925
+msgid "Frequency (Hz)"
+msgstr ""
+
+#: voice_editor_dock.gd:925
+msgid "Resonance position; changes timbre color."
+msgstr ""
+
+#: voice_editor_dock.gd:926
+msgid "Resonance (Q)"
+msgstr ""
+
+#: voice_editor_dock.gd:926
+msgid "Bandwidth (higher = narrower)."
+msgstr ""
+
+#: voice_editor_dock.gd:927
+msgid "Gain"
+msgstr ""
+
+#: voice_editor_dock.gd:927
+msgid "Resonance strength (higher = more pronounced)."
+msgstr ""
+
+#: voice_editor_dock.gd:928
+msgid "Actions"
+msgstr ""
+
+#: voice_editor_dock.gd:928
+msgid "Lock or reset the row."
+msgstr ""
+
+#: voice_editor_dock.gd:943
+msgid "Phoneme preview:"
+msgstr ""
+
+#. Voice Editor Dock - Vowel chart
+#: voice_editor_dock.gd:975 voice_editor_dock.gd:1476
+msgid "Vowel chart"
+msgstr ""
+
+#: voice_editor_dock.gd:976
+msgid "Shows vowel positions in F1-F2 space (openness vs frontness)"
+msgstr ""
+
+#. Voice Editor Dock - A/B Comparison
+#: voice_editor_dock.gd:990 voice_editor_dock.gd:2087
+msgid "A/B Comparison"
+msgstr ""
+
+#: voice_editor_dock.gd:1001
+msgid "Voice B:"
+msgstr ""
+
+#: voice_editor_dock.gd:1015
+msgid "Play A"
+msgstr ""
+
+#: voice_editor_dock.gd:1020
+msgid "Play B"
+msgstr ""
+
+#: voice_editor_dock.gd:1025
+msgid "Alternate"
+msgstr ""
+
+#. Voice Editor Dock - Voice Blending
+#: voice_editor_dock.gd:1033
+msgid "Voice Blending"
+msgstr ""
+
+#: voice_editor_dock.gd:1040
+msgid "Mix A↔B:"
+msgstr ""
+
+#: voice_editor_dock.gd:1063
+msgid "Play blend"
+msgstr ""
+
+#. Voice Editor Dock - Formant row labels
+#: voice_editor_dock.gd:1152
+msgid "F1 (openness)"
+msgstr ""
+
+#: voice_editor_dock.gd:1152
+msgid "F2 (frontness)"
+msgstr ""
+
+#: voice_editor_dock.gd:1152
+msgid "F3 (color)"
+msgstr ""
+
+#: voice_editor_dock.gd:1158
+msgid "F1: vowel openness (higher = more open vowel)."
+msgstr ""
+
+#: voice_editor_dock.gd:1160
+msgid "F2: frontness (higher = brighter)."
+msgstr ""
+
+#: voice_editor_dock.gd:1162
+msgid "F3: fine timbre color."
+msgstr ""
+
+#: voice_editor_dock.gd:1174 voice_editor_dock.gd:1183
+msgid "Resonance frequency (Hz)."
+msgstr ""
+
+#: voice_editor_dock.gd:1196 voice_editor_dock.gd:1205
+msgid "Resonance/Q: bandwidth (higher = narrower)."
+msgstr ""
+
+#: voice_editor_dock.gd:1218 voice_editor_dock.gd:1227
+msgid "Gain: resonance strength."
+msgstr ""
+
+#: voice_editor_dock.gd:1235
+msgid "Lock"
+msgstr ""
+
+#: voice_editor_dock.gd:1236
+msgid "Lock editing of this row."
+msgstr ""
+
+#: voice_editor_dock.gd:1241
+msgid "Reset"
+msgstr ""
+
+#: voice_editor_dock.gd:1242
+msgid "Restore default values."
+msgstr ""
+
+#. Voice Editor Dock - Undo/Redo action
+#: voice_editor_dock.gd:1454
+msgid "Change %s"
+msgstr ""
+
+#: voice_editor_dock.gd:2007
+msgid "Randomize voice"
+msgstr ""

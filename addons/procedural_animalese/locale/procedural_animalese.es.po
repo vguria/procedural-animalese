@@ -1,0 +1,647 @@
+# Procedural Animalese - Spanish Translation
+# Copyright (C) 2025 Procedural Animalese contributors
+# This file is distributed under the same license as the Procedural Animalese addon.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Procedural Animalese 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-26 00:00+0000\n"
+"PO-Revision-Date: 2026-01-26 00:00+0000\n"
+"Last-Translator: Claude\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Editor plugin dock name
+msgid "Voice Editor"
+msgstr "Editor de Voz"
+
+#. Voice Preset Browser
+msgid "Voice Preset Browser"
+msgstr "Explorador de Presets de Voz"
+
+msgid "Search:"
+msgstr "Buscar:"
+
+msgid "Filter by name..."
+msgstr "Filtrar por nombre..."
+
+msgid "Tags"
+msgstr "Etiquetas"
+
+msgid "Filter by voice type"
+msgstr "Filtrar por tipo de voz"
+
+msgid "Masculine"
+msgstr "Masculina"
+
+msgid "Feminine"
+msgstr "Femenina"
+
+msgid "Child"
+msgstr "Infantil"
+
+msgid "Elder"
+msgstr "Anciano"
+
+msgid "Robot"
+msgstr "Robot"
+
+msgid "Monster"
+msgstr "Monstruo"
+
+msgid "Ghost"
+msgstr "Fantasma"
+
+msgid "Whisper"
+msgstr "Susurro"
+
+msgid "Sort"
+msgstr "Ordenar"
+
+msgid "Sort presets"
+msgstr "Ordenar presets"
+
+msgid "Name (A-Z)"
+msgstr "Nombre (A-Z)"
+
+msgid "Name (Z-A)"
+msgstr "Nombre (Z-A)"
+
+msgid "Pitch (Low-High)"
+msgstr "Tono (Bajo-Alto)"
+
+msgid "Pitch (High-Low)"
+msgstr "Tono (Alto-Bajo)"
+
+msgid "Path"
+msgstr "Ruta"
+
+msgid "Refresh"
+msgstr "Actualizar"
+
+msgid "Rescan project for voice presets"
+msgstr "Volver a escanear el proyecto en busca de presets"
+
+msgid "Preview text:"
+msgstr "Texto de prueba:"
+
+msgid "Scanning..."
+msgstr "Escaneando..."
+
+msgid "%d presets found"
+msgstr "%d presets encontrados"
+
+msgid "Showing %d of %d presets"
+msgstr "Mostrando %d de %d presets"
+
+msgid "Play"
+msgstr "Reproducir"
+
+msgid "Load"
+msgstr "Cargar"
+
+msgid "Bass"
+msgstr "Bajo"
+
+msgid "Baritone"
+msgstr "Barítono"
+
+msgid "Tenor"
+msgstr "Tenor"
+
+msgid "Alto"
+msgstr "Alto"
+
+msgid "Soprano"
+msgstr "Soprano"
+
+msgid "High soprano"
+msgstr "Soprano alta"
+
+msgid "Very high"
+msgstr "Muy alta"
+
+#. Voice Creation Wizard
+msgid "Voice Creation Wizard"
+msgstr "Asistente de Creación de Voz"
+
+msgid "New Voice"
+msgstr "Nueva Voz"
+
+msgid "Create Voice"
+msgstr "Crear Voz"
+
+msgid "Step 1 of 4: Basic Information"
+msgstr "Paso 1 de 4: Información Básica"
+
+msgid "Hello! This is a test of my new voice."
+msgstr "¡Hola! Esta es una prueba de mi nueva voz."
+
+msgid "Preview"
+msgstr "Vista previa"
+
+msgid "< Previous"
+msgstr "< Anterior"
+
+msgid "Next >"
+msgstr "Siguiente >"
+
+msgid "Basic Information"
+msgstr "Información Básica"
+
+msgid "Pitch & Timing"
+msgstr "Tono y Ritmo"
+
+msgid "Voice Character"
+msgstr "Carácter de Voz"
+
+msgid "Summary & Save"
+msgstr "Resumen y Guardar"
+
+msgid "Step %d of %d: %s"
+msgstr "Paso %d de %d: %s"
+
+msgid "Choose a name and starting preset for your voice."
+msgstr "Elige un nombre y un preset inicial para tu voz."
+
+msgid "Voice Name:"
+msgstr "Nombre de la Voz:"
+
+msgid "Enter a name for this voice..."
+msgstr "Introduce un nombre para esta voz..."
+
+msgid "Start from:"
+msgstr "Comenzar desde:"
+
+msgid "Custom (blank)"
+msgstr "Personalizado (vacío)"
+
+msgid "Adjust the base pitch and speaking speed."
+msgstr "Ajusta el tono base y la velocidad de habla."
+
+msgid "Randomize"
+msgstr "Aleatorizar"
+
+msgid "Base Pitch (Hz):"
+msgstr "Tono Base (Hz):"
+
+msgid "Character Duration (seconds):"
+msgstr "Duración por Carácter (segundos):"
+
+msgid "Pitch Variation (jitter):"
+msgstr "Variación de Tono (jitter):"
+
+msgid "Fine-tune breathiness, whisper, and vibrato."
+msgstr "Ajusta la respiración, susurro y vibrato."
+
+msgid "Breathiness:"
+msgstr "Respiración:"
+
+msgid "Whisper Amount:"
+msgstr "Cantidad de Susurro:"
+
+msgid "Vibrato Rate (Hz):"
+msgstr "Frecuencia de Vibrato (Hz):"
+
+msgid "Vibrato Depth:"
+msgstr "Profundidad de Vibrato:"
+
+msgid "Review your voice settings and save the resource."
+msgstr "Revisa la configuración de tu voz y guarda el recurso."
+
+msgid "Save Location:"
+msgstr "Ubicación de Guardado:"
+
+msgid "res://path/to/voice.tres"
+msgstr "res://ruta/a/voz.tres"
+
+msgid "Browse..."
+msgstr "Examinar..."
+
+msgid "Voice Summary"
+msgstr "Resumen de Voz"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Base Pitch"
+msgstr "Tono Base"
+
+msgid "Duration"
+msgstr "Duración"
+
+msgid "Pitch Jitter"
+msgstr "Variación de Tono"
+
+msgid "Breathiness"
+msgstr "Respiración"
+
+msgid "Vibrato"
+msgstr "Vibrato"
+
+msgid "depth"
+msgstr "profundidad"
+
+msgid "Off"
+msgstr "Desactivado"
+
+msgid "Start with default values and customize everything yourself."
+msgstr "Comienza con valores por defecto y personaliza todo tú mismo."
+
+msgid "A deep, resonant voice with lower pitch (120-180 Hz). Good for adult male characters."
+msgstr "Una voz profunda y resonante con tono bajo (120-180 Hz). Ideal para personajes masculinos adultos."
+
+msgid "A higher-pitched voice (220-320 Hz) with slightly more breathiness. Good for adult female characters."
+msgstr "Una voz de tono alto (220-320 Hz) con algo más de respiración. Ideal para personajes femeninos adultos."
+
+msgid "A high-pitched voice (300-400 Hz) with faster speech and more pitch variation. Good for young characters."
+msgstr "Una voz aguda (300-400 Hz) con habla rápida y más variación de tono. Ideal para personajes jóvenes."
+
+msgid "A slower, slightly shaky voice with moderate vibrato. Good for elderly characters."
+msgstr "Una voz lenta y ligeramente temblorosa con vibrato moderado. Ideal para personajes ancianos."
+
+msgid "A flat, mechanical voice with no vibrato or jitter. Perfect for AI or robotic characters."
+msgstr "Una voz plana y mecánica sin vibrato ni variación. Perfecta para personajes robóticos o IA."
+
+msgid "A very low, growling voice (80-120 Hz) with high breathiness. Good for creatures and monsters."
+msgstr "Una voz muy grave y gruñona (80-120 Hz) con mucha respiración. Ideal para criaturas y monstruos."
+
+msgid "An ethereal, whispery voice with high breathiness and slow vibrato. Good for supernatural characters."
+msgstr "Una voz etérea y susurrante con mucha respiración y vibrato lento. Ideal para personajes sobrenaturales."
+
+msgid "A soft, hushed voice using mostly breath sounds. Good for secretive or intimate dialogue."
+msgstr "Una voz suave y callada usando principalmente sonidos de respiración. Ideal para diálogos secretos o íntimos."
+
+msgid "Very deep (bass)"
+msgstr "Muy grave (bajo)"
+
+msgid "Deep (baritone)"
+msgstr "Grave (barítono)"
+
+msgid "Low (tenor)"
+msgstr "Bajo (tenor)"
+
+msgid "Medium (alto)"
+msgstr "Medio (alto)"
+
+msgid "High (soprano)"
+msgstr "Alto (soprano)"
+
+msgid "Very high (child)"
+msgstr "Muy alto (infantil)"
+
+msgid "Extremely high"
+msgstr "Extremadamente alto"
+
+#. Voice Editor Dock - Toolbar
+msgid "New..."
+msgstr "Nuevo..."
+
+msgid "Open voice creation wizard"
+msgstr "Abrir asistente de creación de voz"
+
+msgid "Browse voice presets in project"
+msgstr "Explorar presets de voz en el proyecto"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Save voice resource"
+msgstr "Guardar recurso de voz"
+
+msgid "Inspector"
+msgstr "Inspector"
+
+msgid "Edit voice in Inspector panel"
+msgstr "Editar voz en el panel Inspector"
+
+msgid "Preview voice with sample text"
+msgstr "Previsualizar voz con texto de ejemplo"
+
+msgid "Voice name:"
+msgstr "Nombre de voz:"
+
+msgid "Unnamed voice"
+msgstr "Voz sin nombre"
+
+msgid "Preview text..."
+msgstr "Texto de prueba..."
+
+msgid "Pitch x:"
+msgstr "Tono x:"
+
+#. Voice Editor Dock - Waveform section
+msgid "Waveform"
+msgstr "Forma de Onda"
+
+msgid "Zoom:"
+msgstr "Zoom:"
+
+msgid "Clear"
+msgstr "Limpiar"
+
+#. Voice Editor Dock - Tabs
+msgid "Main"
+msgstr "Principal"
+
+msgid "Formants"
+msgstr "Formantes"
+
+msgid "Advanced"
+msgstr "Avanzado"
+
+#. Voice Editor Dock - Parameters section
+msgid "Parameters"
+msgstr "Parámetros"
+
+msgid "Base pitch (Hz)"
+msgstr "Tono base (Hz)"
+
+msgid "Pitch jitter"
+msgstr "Variación de tono"
+
+msgid "Char duration (s)"
+msgstr "Duración por carácter (s)"
+
+msgid "Consonant mult (x)"
+msgstr "Mult. consonantes (x)"
+
+msgid "Output gain"
+msgstr "Ganancia de salida"
+
+msgid "Breath noise"
+msgstr "Ruido de respiración"
+
+msgid "Vocal tract scale"
+msgstr "Escala del tracto vocal"
+
+msgid "Vowel formant gain"
+msgstr "Ganancia formante vocal"
+
+msgid "Fricative formant gain"
+msgstr "Ganancia formante fricativa"
+
+msgid "Stop formant gain"
+msgstr "Ganancia formante oclusiva"
+
+msgid "Nasal formant gain"
+msgstr "Ganancia formante nasal"
+
+msgid "Prosody strength"
+msgstr "Intensidad de prosodia"
+
+msgid "Question rise"
+msgstr "Subida en preguntas"
+
+msgid "Statement fall"
+msgstr "Bajada en afirmaciones"
+
+msgid "Exclamation boost"
+msgstr "Énfasis en exclamaciones"
+
+msgid "Vowel breathiness"
+msgstr "Respiración en vocales"
+
+msgid "Voiced brightness"
+msgstr "Brillo de voz"
+
+msgid "Segment fade (ms)"
+msgstr "Fundido de segmento (ms)"
+
+#. Voice Editor Dock - Randomization section
+msgid "Randomization"
+msgstr "Aleatorización"
+
+msgid "Intensity:"
+msgstr "Intensidad:"
+
+msgid "Lock pitch"
+msgstr "Bloquear tono"
+
+msgid "Lock timing"
+msgstr "Bloquear ritmo"
+
+msgid "Lock timbre"
+msgstr "Bloquear timbre"
+
+msgid "Lock formants"
+msgstr "Bloquear formantes"
+
+msgid "Seed:"
+msgstr "Semilla:"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Re-roll"
+msgstr "Regenerar"
+
+msgid "Subtle"
+msgstr "Sutil"
+
+msgid "Strong"
+msgstr "Fuerte"
+
+msgid "Formants only"
+msgstr "Solo formantes"
+
+#. Voice Editor Dock - Formant section
+msgid "Group:"
+msgstr "Grupo:"
+
+msgid "Vowel /a/"
+msgstr "Vocal /a/"
+
+msgid "Vowel /e/"
+msgstr "Vocal /e/"
+
+msgid "Vowel /i/"
+msgstr "Vocal /i/"
+
+msgid "Vowel /o/"
+msgstr "Vocal /o/"
+
+msgid "Vowel /u/"
+msgstr "Vocal /u/"
+
+msgid "Fricative /s/"
+msgstr "Fricativa /s/"
+
+msgid "Fricative /f/"
+msgstr "Fricativa /f/"
+
+msgid "Fricative /x/"
+msgstr "Fricativa /x/"
+
+msgid "Stop /p/"
+msgstr "Oclusiva /p/"
+
+msgid "Stop /t/"
+msgstr "Oclusiva /t/"
+
+msgid "Stop /k/"
+msgstr "Oclusiva /k/"
+
+msgid "Nasal /m,n/"
+msgstr "Nasal /m,n/"
+
+msgid "Nasal /n/"
+msgstr "Nasal /n/"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Paste"
+msgstr "Pegar"
+
+msgid "Reset group"
+msgstr "Restablecer grupo"
+
+#. Voice Editor Dock - Formant presets
+msgid "Presets"
+msgstr "Presets"
+
+msgid "Preset:"
+msgstr "Preset:"
+
+msgid "Default"
+msgstr "Por defecto"
+
+msgid "Bright"
+msgstr "Brillante"
+
+msgid "Dark"
+msgstr "Oscuro"
+
+msgid "Nasal"
+msgstr "Nasal"
+
+msgid "Very bright"
+msgstr "Muy brillante"
+
+msgid "Very dark"
+msgstr "Muy oscuro"
+
+msgid "Soft"
+msgstr "Suave"
+
+msgid "Focused"
+msgstr "Enfocado"
+
+msgid "Wide (low Q)"
+msgstr "Amplio (Q bajo)"
+
+msgid "Metallic"
+msgstr "Metálico"
+
+#. Voice Editor Dock - Formant grid headers
+msgid "Frequency (Hz)"
+msgstr "Frecuencia (Hz)"
+
+msgid "Resonance position; changes timbre color."
+msgstr "Posición de resonancia; cambia el color del timbre."
+
+msgid "Resonance (Q)"
+msgstr "Resonancia (Q)"
+
+msgid "Bandwidth (higher = narrower)."
+msgstr "Ancho de banda (mayor = más estrecho)."
+
+msgid "Gain"
+msgstr "Ganancia"
+
+msgid "Resonance strength (higher = more pronounced)."
+msgstr "Intensidad de resonancia (mayor = más pronunciado)."
+
+msgid "Actions"
+msgstr "Acciones"
+
+msgid "Lock or reset the row."
+msgstr "Bloquear o restablecer la fila."
+
+msgid "Phoneme preview:"
+msgstr "Vista previa de fonema:"
+
+#. Voice Editor Dock - Vowel chart
+msgid "Vowel chart"
+msgstr "Diagrama de vocales"
+
+msgid "Shows vowel positions in F1-F2 space (openness vs frontness)"
+msgstr "Muestra las posiciones de vocales en el espacio F1-F2 (apertura vs frontalidad)"
+
+#. Voice Editor Dock - A/B Comparison
+msgid "A/B Comparison"
+msgstr "Comparación A/B"
+
+msgid "Voice B:"
+msgstr "Voz B:"
+
+msgid "Play A"
+msgstr "Reproducir A"
+
+msgid "Play B"
+msgstr "Reproducir B"
+
+msgid "Alternate"
+msgstr "Alternar"
+
+#. Voice Editor Dock - Voice Blending
+msgid "Voice Blending"
+msgstr "Mezcla de Voces"
+
+msgid "Mix A↔B:"
+msgstr "Mezcla A↔B:"
+
+msgid "Play blend"
+msgstr "Reproducir mezcla"
+
+#. Voice Editor Dock - Formant row labels
+msgid "F1 (openness)"
+msgstr "F1 (apertura)"
+
+msgid "F2 (frontness)"
+msgstr "F2 (frontalidad)"
+
+msgid "F3 (color)"
+msgstr "F3 (color)"
+
+msgid "F1: vowel openness (higher = more open vowel)."
+msgstr "F1: apertura vocálica (mayor = vocal más abierta)."
+
+msgid "F2: frontness (higher = brighter)."
+msgstr "F2: frontalidad (mayor = más brillante)."
+
+msgid "F3: fine timbre color."
+msgstr "F3: color fino del timbre."
+
+msgid "Resonance frequency (Hz)."
+msgstr "Frecuencia de resonancia (Hz)."
+
+msgid "Resonance/Q: bandwidth (higher = narrower)."
+msgstr "Resonancia/Q: ancho de banda (mayor = más estrecho)."
+
+msgid "Gain: resonance strength."
+msgstr "Ganancia: intensidad de resonancia."
+
+msgid "Lock"
+msgstr "Bloquear"
+
+msgid "Lock editing of this row."
+msgstr "Bloquear edición de esta fila."
+
+msgid "Reset"
+msgstr "Restablecer"
+
+msgid "Restore default values."
+msgstr "Restaurar valores por defecto."
+
+#. Voice Editor Dock - Undo/Redo action
+msgid "Change %s"
+msgstr "Cambiar %s"
+
+msgid "Randomize voice"
+msgstr "Aleatorizar voz"

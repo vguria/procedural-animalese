@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AnimaleseVoice" format=3 uid="uid://cqkv1y4csd6hd"]
+
+[ext_resource type="Script" uid="uid://8hnsnrtuq0tl" path="res://addons/procedural_animalese/runtime/animalese_voice.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+pitch_base_hz = 180.0
+vibrato_rate_hz = 3.0
+vibrato_depth = 0.04
+coarticulation_strength = 0.3

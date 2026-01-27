@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c0cpko4kj6i3c"]
+
+[ext_resource type="PackedScene" uid="uid://dyy5np34blrrj" path="res://addons/procedural_animalese/demo/demo.tscn" id="1_ig7tw"]
+
+[node name="Node2D" type="Control" unique_id=1738505168]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Demo" parent="." unique_id=2087639276 instance=ExtResource("1_ig7tw")]
+layout_mode = 1
