@@ -5,3 +5,7 @@
 
 # CI-downloaded Godot binary (see .github/workflows/tests.yml)
 /godot-bin/
+
+# Godot auto-generates this on editor launch when project.godot leaves
+# audio/buses/default_bus_layout empty; not tracked on purpose.
+/default_bus_layout.tres
