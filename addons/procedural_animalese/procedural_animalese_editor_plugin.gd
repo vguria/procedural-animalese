@@ -5,14 +5,29 @@ extends EditorPlugin
 const TYPE_NODE_NAME := "ProceduralAnimalese"
 const TYPE_NODE_BASE := "Node"
 
-const TYPE_VOICE := "AnimaleseVoice"
-const TYPE_LIBRARY := "AnimaleseVoiceLibrary"
-const TYPE_ENTRY := "AnimaleseVoiceEntry"
-const TYPE_EMOTION := "AnimaleseEmotion"
-const TYPE_LANGUAGE := "LanguageProcessor"
-const TYPE_SPANISH := "SpanishProcessor"
-const TYPE_ENGLISH := "EnglishProcessor"
-const TYPE_JAPANESE := "JapaneseProcessor"
+# Non-language custom types: registered individually below.
+const NODE_TYPES := [
+	["AnimaleseVoice",         "Resource", "res://addons/procedural_animalese/runtime/animalese_voice.gd"],
+	["AnimaleseVoiceLibrary",  "Resource", "res://addons/procedural_animalese/runtime/animalese_voice_library.gd"],
+	["AnimaleseVoiceEntry",    "Resource", "res://addons/procedural_animalese/runtime/animalese_voice_entry.gd"],
+	["AnimaleseEmotion",       "Resource", "res://addons/procedural_animalese/runtime/animalese_emotion.gd"],
+	["LanguageProcessor",      "Resource", "res://addons/procedural_animalese/runtime/language_processor.gd"],
+]
+
+# Every language processor gets registered as a Resource so it appears in the
+# editor's "New Resource" menu. To add a new language, add one line here and one
+# match arm in LanguageDetector.create_processor_for_code — no other files.
+const LANGUAGE_PROCESSORS := [
+	["SpanishProcessor",    "res://addons/procedural_animalese/runtime/spanish_processor.gd"],
+	["EnglishProcessor",    "res://addons/procedural_animalese/runtime/english_processor.gd"],
+	["JapaneseProcessor",   "res://addons/procedural_animalese/runtime/japanese_processor.gd"],
+	["FrenchProcessor",     "res://addons/procedural_animalese/runtime/french_processor.gd"],
+	["GermanProcessor",     "res://addons/procedural_animalese/runtime/german_processor.gd"],
+	["PortugueseProcessor", "res://addons/procedural_animalese/runtime/portuguese_processor.gd"],
+	["ItalianProcessor",    "res://addons/procedural_animalese/runtime/italian_processor.gd"],
+	["RussianProcessor",    "res://addons/procedural_animalese/runtime/russian_processor.gd"],
+	["ChineseProcessor",    "res://addons/procedural_animalese/runtime/chinese_processor.gd"],
+]
 
 var _dock: Control
 var _preview_node: ProceduralAnimalese
@@ -26,61 +41,11 @@ func _enter_tree() -> void:
 		null
 	)
 
-	add_custom_type(
-		TYPE_VOICE,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/animalese_voice.gd"),
-		null
-	)
+	for entry in NODE_TYPES:
+		add_custom_type(entry[0], entry[1], load(entry[2]), null)
 
-	add_custom_type(
-		TYPE_LIBRARY,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/animalese_voice_library.gd"),
-		null
-	)
-
-	add_custom_type(
-		TYPE_ENTRY,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/animalese_voice_entry.gd"),
-		null
-	)
-
-	add_custom_type(
-		TYPE_EMOTION,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/animalese_emotion.gd"),
-		null
-	)
-
-	add_custom_type(
-		TYPE_LANGUAGE,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/language_processor.gd"),
-		null
-	)
-
-	add_custom_type(
-		TYPE_SPANISH,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/spanish_processor.gd"),
-		null
-	)
-
-	add_custom_type(
-		TYPE_ENGLISH,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/english_processor.gd"),
-		null
-	)
-
-	add_custom_type(
-		TYPE_JAPANESE,
-		"Resource",
-		preload("res://addons/procedural_animalese/runtime/japanese_processor.gd"),
-		null
-	)
+	for entry in LANGUAGE_PROCESSORS:
+		add_custom_type(entry[0], "Resource", load(entry[1]), null)
 
 	# --- Dock UI ---
 	_dock = preload("res://addons/procedural_animalese/voice_editor_dock.gd").new()
@@ -121,14 +86,10 @@ func _exit_tree() -> void:
 
 	# Unregister custom types
 	remove_custom_type(TYPE_NODE_NAME)
-	remove_custom_type(TYPE_VOICE)
-	remove_custom_type(TYPE_LIBRARY)
-	remove_custom_type(TYPE_ENTRY)
-	remove_custom_type(TYPE_EMOTION)
-	remove_custom_type(TYPE_LANGUAGE)
-	remove_custom_type(TYPE_SPANISH)
-	remove_custom_type(TYPE_ENGLISH)
-	remove_custom_type(TYPE_JAPANESE)
+	for entry in NODE_TYPES:
+		remove_custom_type(entry[0])
+	for entry in LANGUAGE_PROCESSORS:
+		remove_custom_type(entry[0])
 
 func _on_request_preview(voice: AnimaleseVoice, text: String, pitch_mul: float) -> void:
 	if _preview_node == null:

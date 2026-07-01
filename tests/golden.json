@@ -1,7 +1,7 @@
 {
 	"autolang/de": {
-		"hash": "228fe4d64d9ac3f43fee2ba35f2eb5c37b152685d84469d155b3654deb079c19",
-		"len": 57916
+		"hash": "5fe5b4a0657ff44761eb19e70f6d13a2bad6afb2f2e165b2d6e4b260da66691f",
+		"len": 59037
 	},
 	"autolang/en": {
 		"hash": "18873c96e5bddca15b77a667055d6d34589bb7848a900bf451354575dc8c819b",
@@ -12,12 +12,12 @@
 		"len": 63826
 	},
 	"autolang/fr": {
-		"hash": "347321e268ba7c7f5da927dfe947666aa7c1e9dedbc22fbaee522c283861a5dd",
-		"len": 73939
+		"hash": "4e82bbc455135ed50536b15c4af1799e78e159bb63665b0a863bface8e3ccb92",
+		"len": 71271
 	},
 	"autolang/it": {
-		"hash": "9f009314887566630070e654077392a34e80e9ebfa59bebe1402d54ce61fd85f",
-		"len": 61460
+		"hash": "7b8ba6adce13429846fa293142c530faf3845a1d1391dff93491642b3be1feeb",
+		"len": 64128
 	},
 	"autolang/ja": {
 		"hash": "ea8a799a5d17dcb942b4f0b9a89e55ad5220058b470dba2021d50fa2d9037b38",
@@ -36,6 +36,9 @@
 	},
 	"determinism/repeat": {
 		"identical": true
+	},
+	"lang/fr_differs_from_es": {
+		"differs": true
 	},
 	"preset/voice_child": {
 		"hash": "2896e87197d8cf88a10337f894ec1f1524cdd23c3d51f09addae6d72e2e94aa4",

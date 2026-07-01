@@ -171,13 +171,25 @@ func _run_all(golden: Dictionary) -> void:
 	_record(golden, "coart/on", {"len": buf_on.size(), "hash": _hash_buf(buf_on)})
 	_record(golden, "coart/differs", {"differs": _hash_buf(buf_off) != _hash_buf(buf_on)})
 
-	# 4. Determinism: same seed, same input → byte-identical output on a repeat call.
+	# 4. Language routing: the SAME text tokenized with a French processor must
+	# produce different audio than with the Spanish processor. Regression guard
+	# for the silent-Spanish-fallback bug where AnimaleseSynth used to ignore
+	# fr/de/pt/it/ru/zh language codes and tokenize everything as Spanish.
+	var v_lang := _load_seeded_voice("voice_default", 21)
+	pa.language = load("res://addons/procedural_animalese/runtime/french_processor.gd").new()
+	var buf_fr_route := pa.synthesize_to_buffer("Bonjour le monde", 1.0, v_lang)
+	pa.language = load("res://addons/procedural_animalese/runtime/spanish_processor.gd").new()
+	var buf_es_route := pa.synthesize_to_buffer("Bonjour le monde", 1.0, v_lang)
+	pa.language = null
+	_record(golden, "lang/fr_differs_from_es", {"differs": _hash_buf(buf_fr_route) != _hash_buf(buf_es_route)})
+
+	# 5. Determinism: same seed, same input → byte-identical output on a repeat call.
 	var v_det := _load_seeded_voice("voice_default", 55555)
 	var a := pa.synthesize_to_buffer("Prueba de determinismo", 1.0, v_det)
 	var b := pa.synthesize_to_buffer("Prueba de determinismo", 1.0, v_det)
 	_record(golden, "determinism/repeat", {"identical": _hash_buf(a) == _hash_buf(b)})
 
-	# 5. Viseme track structure for a mixed phrase. Locks in the phoneme→viseme
+	# 6. Viseme track structure for a mixed phrase. Locks in the phoneme→viseme
 	# mapping and the timing calc that get_viseme_track shares with the kernel.
 	var v_viseme := _load_seeded_voice("voice_default", 1)
 	var track: Array = pa.get_viseme_track("Hola, ¿qué tal? Perfecto.", 1.0, v_viseme)

@@ -158,30 +158,13 @@ static func make_cache_key(vd: Dictionary, text: String, pitch_mul: float, mix_r
 	h = h ^ (seed_val * 7)
 	return h
 
-# Synthesize audio for the given text and return the raw samples (for visualization).
-
-## Create a LanguageProcessor from an ISO code ("es", "en", "ja", ...).
-static func create_language_from_code(code: String) -> LanguageProcessor:
-	match code:
-		"es":
-			return SpanishProcessor.new()
-		"en":
-			return EnglishProcessor.new()
-		"ja":
-			return JapaneseProcessor.new()
-		_:
-			return SpanishProcessor.new()  # Default fallback
-
-# Single synthesis kernel: turns text + serialized voice params into audio samples
-# (plus optional timing markers). Safe to call from a worker thread.
-
 ## Main synthesis kernel. Text + serialized voice → PCM samples.
 ## If markers_out is non-empty on entry it is still filled; pass a fresh
 ## Array[TimingMarker] to receive per-phoneme / per-word / end markers.
 static func synthesize(text: String, pitch_mul: float, vd: Dictionary, mr: int, p_space: float, p_comma: float, p_period: float, use_f4f5: bool = false, markers_out: Array[TimingMarker] = []) -> PackedFloat32Array:
 	var original: String = text
 	var lang_code: String = vd.get("language_code", "es")
-	var lang: LanguageProcessor = create_language_from_code(lang_code)
+	var lang: LanguageProcessor = LanguageDetector.create_processor_for_code(lang_code)
 	var s: String = lang.normalize(text)
 	var tokens: Array[String] = lang.tokenize(s)
 	var out: PackedFloat32Array = PackedFloat32Array()
@@ -314,7 +297,7 @@ static func synthesize(text: String, pitch_mul: float, vd: Dictionary, mr: int, 
 static func collect_timing_markers(text: String, vd: Dictionary, mr: int, p_space: float, p_comma: float, p_period: float) -> Array[TimingMarker]:
 	var markers: Array[TimingMarker] = []
 	var lang_code: String = vd.get("language_code", "es")
-	var lang: LanguageProcessor = create_language_from_code(lang_code)
+	var lang: LanguageProcessor = LanguageDetector.create_processor_for_code(lang_code)
 	var s: String = lang.normalize(text)
 	var tokens: Array[String] = lang.tokenize(s)
 

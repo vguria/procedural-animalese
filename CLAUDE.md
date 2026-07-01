@@ -62,9 +62,9 @@ Timing markers (`AnimaleseSynth.TimingMarker`, `AnimaleseSynth.MarkerType.PHONEM
 `LanguageProcessor` (base) declares `normalize(text) → String`, `tokenize(text) → Array[String]`, `is_vowel(ch)`, `get_language_code()`. Each language subclass under `runtime/*_processor.gd` implements its own normalization (e.g. Spanish collapses `ll`/`rr`/`ch`, drops silent `h`, maps `que`→`ke`) and CV-style syllable tokenization. When adding a new language:
 
 1. Create `runtime/<lang>_processor.gd` extending `LanguageProcessor` with a `class_name`, override the four methods.
-2. Register it in `procedural_animalese_editor_plugin.gd` (`add_custom_type` + matching `remove_custom_type` in `_exit_tree`) if it needs to appear in the editor's "New Resource" menu.
-3. Wire it into `LanguageDetector` (`runtime/language_detector.gd`) — add the ISO code to `LOCALE_TO_LANGUAGE`, add character/word heuristics, and update `create_processor_for_language()`.
-4. Update `ProceduralAnimalese._create_language_from_code()` / `create_language_processor()`.
+2. Add one match arm to `LanguageDetector.create_processor_for_code()` in `runtime/language_detector.gd` — this is the single source of truth for code → processor, consumed by both `AnimaleseSynth.synthesize()` and the public `speak_*` paths.
+3. Also wire it into `LanguageDetector` for auto-detect: add the ISO code to `LOCALE_TO_LANGUAGE` and any character/word heuristics.
+4. Add one line to the `LANGUAGE_PROCESSORS` const array in `procedural_animalese_editor_plugin.gd` so it appears in the editor "New Resource" menu (a single loop registers/unregisters everything in that list).
 
 ### Voice presets
 
