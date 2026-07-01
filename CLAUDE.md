@@ -22,6 +22,8 @@ There is no CLI build/lint/test toolchain — the workflow is Godot-editor drive
 
 Locale: to add an editor UI translation, copy `addons/procedural_animalese/locale/procedural_animalese.pot` to `procedural_animalese.<code>.po` and translate — the plugin wraps user-facing strings with `tr()`.
 
+Golden-file synthesis tests live in `tests/`. Run them with `tests/run.sh` (set `GODOT=/path/to/godot4` if `godot` isn't on `$PATH`). The runner hashes the raw PCM output of `synthesize_to_buffer()` per preset + phrase with a fixed `random_seed`, and compares against `tests/golden.json`; any DSP or language-processor drift produces mismatched SHA-256s and exit 1. The suite also asserts two invariants that don't depend on the fixture: `coart/differs` (coarticulation on vs off must produce different audio — this is the drift point the dual-code-path unification fixed) and `determinism/repeat` (same seed + text → byte-identical output on a second call). To regenerate the fixture after an intentional DSP change: `tests/run.sh -- --generate` and commit the updated `golden.json`.
+
 ## Architecture
 
 ### Two layers: plugin bootstrap vs. runtime

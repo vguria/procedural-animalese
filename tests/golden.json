@@ -1,0 +1,76 @@
+{
+	"autolang/de": {
+		"hash": "228fe4d64d9ac3f43fee2ba35f2eb5c37b152685d84469d155b3654deb079c19",
+		"len": 57916
+	},
+	"autolang/en": {
+		"hash": "18873c96e5bddca15b77a667055d6d34589bb7848a900bf451354575dc8c819b",
+		"len": 53793
+	},
+	"autolang/es": {
+		"hash": "8338ccc70c35ecd7a04936172d19f7f5e34286b76806ea85b8128c80d419106e",
+		"len": 63826
+	},
+	"autolang/fr": {
+		"hash": "347321e268ba7c7f5da927dfe947666aa7c1e9dedbc22fbaee522c283861a5dd",
+		"len": 73939
+	},
+	"autolang/it": {
+		"hash": "9f009314887566630070e654077392a34e80e9ebfa59bebe1402d54ce61fd85f",
+		"len": 61460
+	},
+	"autolang/ja": {
+		"hash": "ea8a799a5d17dcb942b4f0b9a89e55ad5220058b470dba2021d50fa2d9037b38",
+		"len": 68127
+	},
+	"coart/differs": {
+		"differs": true
+	},
+	"coart/off": {
+		"hash": "78af3e5557817092058f3503b6419013ea91f7b08ceb0b5d560052bfd2b59026",
+		"len": 23057
+	},
+	"coart/on": {
+		"hash": "924a763e64e68c8dfe160df05b777e61663d2c9c70d09e6186774f1856dd9341",
+		"len": 23057
+	},
+	"determinism/repeat": {
+		"identical": true
+	},
+	"preset/voice_child": {
+		"hash": "2896e87197d8cf88a10337f894ec1f1524cdd23c3d51f09addae6d72e2e94aa4",
+		"len": 81291
+	},
+	"preset/voice_default": {
+		"hash": "3d6079a177715dabc119897ed2e4cda1b8db29ac550822114ae148ee95281e33",
+		"len": 86784
+	},
+	"preset/voice_elder": {
+		"hash": "d24646ba388a1872908686e943d05e143aed238cfcac656d67da2b930d898e4d",
+		"len": 108720
+	},
+	"preset/voice_feminine": {
+		"hash": "624b54cd1abbf316b53fe3bdfd5f0c85cd46769094b3a2d03e1c0056222bd7fd",
+		"len": 86784
+	},
+	"preset/voice_ghost": {
+		"hash": "8814f9e4798aa81bcda5225d2d8fdcb4c007d50ad7557a2b73e33fd93d0a6da7",
+		"len": 114211
+	},
+	"preset/voice_masculine": {
+		"hash": "d82597d4757c0f818e648fdc1bb97d8b82445b5223f6fe96f0abd1a589ec4934",
+		"len": 97751
+	},
+	"preset/voice_monster": {
+		"hash": "91c1b02794a4c3c1ad8e65a659b7cb2281e2274e04f1c813d78513001071e891",
+		"len": 125178
+	},
+	"preset/voice_robot": {
+		"hash": "203dc7436cf374717db3a98aade8687383817e0f02296d670b905005d9439c0b",
+		"len": 103242
+	},
+	"viseme/mixed": {
+		"count": 24,
+		"sig_hash": 687064452
+	}
+}
