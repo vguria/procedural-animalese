@@ -1,6 +1,6 @@
 # Procedural Animalese
 
-Real-time procedural speech synthesis for Godot 4.x, inspired by Animal Crossing. Generate unique character voices without pre-recorded audio.
+Real-time procedural speech synthesis for Godot 4.4+, inspired by Animal Crossing. Generate unique character voices without pre-recorded audio.
 
 ## Features
 

@@ -1,0 +1,36 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Godot 4.6 binary
+        id: cache-godot
+        uses: actions/cache@v4
+        with:
+          path: godot-bin
+          key: godot-4.6-stable-linux
+
+      - name: Download Godot 4.6 headless
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p godot-bin
+          curl -sSL -o godot.zip \
+            https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_linux.x86_64.zip
+          unzip -o godot.zip -d godot-bin
+          chmod +x godot-bin/Godot_v4.6-stable_linux.x86_64
+
+      - name: Import project (catches script parse errors)
+        run: ./godot-bin/Godot_v4.6-stable_linux.x86_64 --headless --path . --import
+
+      - name: Run golden-file synthesis tests
+        env:
+          GODOT: ./godot-bin/Godot_v4.6-stable_linux.x86_64
+        run: tests/run.sh

@@ -8,7 +8,7 @@ Use this information when submitting to the Godot Asset Library.
 
 **Category:** Tools
 
-**Godot Version:** 4.0+
+**Godot Version:** 4.4+
 
 **License:** MIT
 
@@ -162,7 +162,7 @@ addons/procedural_animalese/
 
 ## Pre-submission Checklist
 
-- [ ] Test plugin on clean Godot 4.x project
+- [ ] Test plugin on clean Godot 4.4+ project
 - [ ] Verify all presets load correctly
 - [ ] Test demo scene runs without errors
 - [ ] Take 5 screenshots

@@ -2,3 +2,6 @@
 .godot/
 .vscode/
 /android/
+
+# CI-downloaded Godot binary (see .github/workflows/tests.yml)
+/godot-bin/

@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Godot 4.x editor plugin (`addons/procedural_animalese`) that generates procedural "Animalese"-style speech at runtime via formant synthesis — no pre-recorded audio. The repo root is a thin Godot host project whose only role is to load the plugin and run the demo scene (`main.tscn` → `addons/procedural_animalese/demo/demo.tscn`). All real code lives under the plugin folder.
+Godot 4.4+ editor plugin (`addons/procedural_animalese`) that generates procedural "Animalese"-style speech at runtime via formant synthesis — no pre-recorded audio. The repo root is a thin Godot host project whose only role is to load the plugin and run the demo scene (`main.tscn` → `addons/procedural_animalese/demo/demo.tscn`). All real code lives under the plugin folder.
 
-- Engine: Godot 4.6 (see `project.godot` → `config/features`)
+- Engine: authored against Godot 4.6 (see `project.godot` → `config/features`); minimum runtime version is 4.4 (typed `Dictionary[K, V]` is used in the runtime cache and in the editor dock)
 - Language: GDScript only (no C#, no GDExtension)
 - Plugin version: see `addons/procedural_animalese/plugin.cfg`
 

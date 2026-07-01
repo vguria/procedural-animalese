@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbb7s85e1qicf"]
-
-[ext_resource type="Script" uid="uid://btfina3jcffj6" path="res://addons/procedural_animalese/demo/performance_test.gd" id="1"]
-
-[node name="PerformanceTest" type="Node" unique_id=345872081]
-script = ExtResource("1")

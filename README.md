@@ -1,6 +1,6 @@
 # Procedural Animalese
 
-A Godot 4.x plugin for procedural speech synthesis inspired by Animal Crossing's "Animalese" speech style. Generate expressive, gibberish-like speech in real-time with customizable voices, emotions, and multi-language support.
+A Godot 4.4+ plugin for procedural speech synthesis inspired by Animal Crossing's "Animalese" speech style. Generate expressive, gibberish-like speech in real-time with customizable voices, emotions, and multi-language support.
 
 ## Features
 

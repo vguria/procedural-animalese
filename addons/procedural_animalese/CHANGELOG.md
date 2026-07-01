@@ -142,7 +142,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Technical Details
 
-- **Godot Version**: 4.x
+- **Godot Version**: 4.4+ (requires typed Dictionary syntax)
 - **Audio**: AudioStreamGenerator at 44100 Hz (configurable)
 - **Threading**: WorkerThreadPool for background synthesis
 - **Caching**: Hash-based cache with int64 keys
