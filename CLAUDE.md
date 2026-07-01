@@ -78,6 +78,6 @@ Timing markers (`AnimaleseSynth.TimingMarker`, `AnimaleseSynth.MarkerType.PHONEM
 
 - All plugin-facing scripts use `class_name` so they resolve globally in user projects.
 - The editor plugin script and any script that must run in-editor use `@tool`. `run_in_editor` on `ProceduralAnimalese` is the runtime-side toggle for in-editor playback (preview node in the dock).
-- Comments in `animalese_voice.gd`, `animalese_emotion.gd`, and older runtime files are Spanish; newer code and public docs are English. Match the surrounding file's language when editing.
+- All runtime code and public docs are in English. Some editor UI files (`voice_editor_dock.gd`, `voice_wizard.gd`) still carry Spanish comments — leave those alone unless you're already working in the file, and note that user-facing strings there go through `tr()` for localization.
 - Never mutate a user's `AnimaleseVoice` resource in place — clone via `duplicate()` or the emotion apply path.
 - All DSP changes go in `runtime/animalese_synth.gd` — every method there is `static` and only reads its arguments, so nothing in that file is allowed to touch instance state or emit signals. Anything that needs to interact with the node lives in `runtime/procedural_animalese.gd`.

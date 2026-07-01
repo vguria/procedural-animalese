@@ -1,74 +1,71 @@
-## Modificador emocional para ProceduralAnimalese.
-## Aplica multiplicadores y offsets a los parametros de voz para expresar emociones.
+## Emotional modifier for ProceduralAnimalese.
+## Applies multipliers and offsets to voice parameters to express emotions.
 extends Resource
 class_name AnimaleseEmotion
 
-## Nombre de la emocion para identificarla en markup y codigo.
+## Name of the emotion, used from markup and code lookups.
 @export var emotion_name: String = "neutral"
 
-## Multiplicadores de parametros base.
-## Valores > 1.0 aumentan, < 1.0 reducen, 1.0 = sin cambio.
-@export_group("Multiplicadores")
-@export_range(0.5, 2.0, 0.01) var pitch_mul: float = 1.0 ## Multiplicador de pitch base.
-@export_range(0.5, 2.0, 0.01) var speed_mul: float = 1.0 ## Multiplicador de velocidad (mayor = mas rapido).
-@export_range(0.5, 2.0, 0.01) var volume_mul: float = 1.0 ## Multiplicador de volumen.
-@export_range(0.0, 3.0, 0.01) var vibrato_mul: float = 1.0 ## Multiplicador de intensidad de vibrato.
-@export_range(0.5, 3.0, 0.01) var jitter_mul: float = 1.0 ## Multiplicador de variacion de pitch.
-@export_range(0.5, 2.0, 0.01) var prosody_mul: float = 1.0 ## Multiplicador de intensidad de prosodia.
+## Base-parameter multipliers.
+## Values > 1.0 boost, < 1.0 reduce, 1.0 = no change.
+@export_group("Multipliers")
+@export_range(0.5, 2.0, 0.01) var pitch_mul: float = 1.0 ## Base pitch multiplier.
+@export_range(0.5, 2.0, 0.01) var speed_mul: float = 1.0 ## Speed multiplier (higher = faster).
+@export_range(0.5, 2.0, 0.01) var volume_mul: float = 1.0 ## Volume multiplier.
+@export_range(0.0, 3.0, 0.01) var vibrato_mul: float = 1.0 ## Vibrato intensity multiplier.
+@export_range(0.5, 3.0, 0.01) var jitter_mul: float = 1.0 ## Pitch-jitter multiplier.
+@export_range(0.5, 2.0, 0.01) var prosody_mul: float = 1.0 ## Prosody intensity multiplier.
 
-## Offsets aditivos (se suman al valor base).
+## Additive offsets (added to the base value).
 @export_group("Offsets")
-@export_range(-0.5, 0.5, 0.01) var breathiness_add: float = 0.0 ## Ruido de respiracion adicional.
-@export_range(-0.3, 0.3, 0.01) var brightness_add: float = 0.0 ## Brillo adicional (filtro).
-@export_range(0.0, 1.0, 0.01) var whisper_add: float = 0.0 ## Cantidad de susurro adicional (0-1).
+@export_range(-0.5, 0.5, 0.01) var breathiness_add: float = 0.0 ## Extra breath noise.
+@export_range(-0.3, 0.3, 0.01) var brightness_add: float = 0.0 ## Extra brightness (filter).
+@export_range(0.0, 1.0, 0.01) var whisper_add: float = 0.0 ## Extra whisper amount (0-1).
 
-## Parametros de vibrato emocional (se aplican si son > 0).
-## Utiles para emociones que introducen vibrato donde no lo habia.
-@export_group("Vibrato Emocional")
-@export_range(0.0, 8.0, 0.1) var vibrato_rate_override: float = 0.0 ## Frecuencia de vibrato (0 = usar el de voz).
-@export_range(0.0, 0.5, 0.01) var vibrato_depth_override: float = 0.0 ## Profundidad de vibrato (0 = usar el de voz).
+## Emotional-vibrato parameters (applied when > 0).
+## Useful for emotions that introduce vibrato where the base voice had none.
+@export_group("Emotional vibrato")
+@export_range(0.0, 8.0, 0.1) var vibrato_rate_override: float = 0.0 ## Vibrato frequency (0 = keep the voice's own).
+@export_range(0.0, 0.5, 0.01) var vibrato_depth_override: float = 0.0 ## Vibrato depth (0 = keep the voice's own).
 
-## Intensidad de la emocion (0-1). Permite mezclar con estado neutral.
-@export_group("Intensidad")
-@export_range(0.0, 1.0, 0.01) var intensity: float = 1.0 ## 0 = neutral, 1 = emocion completa.
+## Emotion intensity (0-1). Interpolates from neutral to full expression.
+@export_group("Intensity")
+@export_range(0.0, 1.0, 0.01) var intensity: float = 1.0 ## 0 = neutral, 1 = full emotion.
 
 
-## Aplica esta emocion a los parametros de voz, devolviendo un diccionario con los valores modificados.
-## Los parametros originales no se modifican.
+## Apply this emotion to a serialized voice-params Dictionary and return a
+## modified copy. The original is not mutated.
 func apply_to_voice_params(params: Dictionary) -> Dictionary:
 	var result: Dictionary = params.duplicate()
 	var t: float = intensity
 
-	# Aplicar multiplicadores interpolando con intensidad
 	result["pitch_base_hz"] = params.get("pitch_base_hz", 220.0) * lerpf(1.0, pitch_mul, t)
 	result["char_duration_s"] = params.get("char_duration_s", 0.055) / lerpf(1.0, speed_mul, t)
 	result["output_gain"] = params.get("output_gain", 0.9) * lerpf(1.0, volume_mul, t)
 	result["pitch_jitter"] = params.get("pitch_jitter", 0.06) * lerpf(1.0, jitter_mul, t)
 	result["prosody_strength"] = params.get("prosody_strength", 0.6) * lerpf(1.0, prosody_mul, t)
 
-	# Aplicar offsets
 	result["breath_noise_level"] = clampf(params.get("breath_noise_level", 0.15) + breathiness_add * t, 0.0, 1.5)
 	result["voiced_brightness"] = clampf(params.get("voiced_brightness", 0.55) + brightness_add * t, 0.0, 1.0)
 	result["whisper_amount"] = clampf(params.get("whisper_amount", 0.0) + whisper_add * t, 0.0, 1.0)
 
-	# Vibrato: multiplicar existente o usar override
 	var base_vib_rate: float = params.get("vibrato_rate_hz", 0.0)
 	var base_vib_depth: float = params.get("vibrato_depth", 0.0)
 
 	if vibrato_rate_override > 0.0 and base_vib_rate == 0.0:
-		# Introducir vibrato donde no habia
+		# Introduce vibrato where the base voice had none.
 		result["vibrato_rate_hz"] = vibrato_rate_override * t
 		result["vibrato_depth"] = vibrato_depth_override * t
 	else:
-		# Multiplicar vibrato existente
+		# Scale the existing vibrato.
 		result["vibrato_rate_hz"] = base_vib_rate * lerpf(1.0, vibrato_mul, t)
 		result["vibrato_depth"] = base_vib_depth * lerpf(1.0, vibrato_mul, t)
 
 	return result
 
 
-## Mezcla esta emocion con otra, devolviendo una nueva emocion.
-## factor 0.0 = esta emocion, 1.0 = otra emocion.
+## Blend this emotion with another and return a new emotion.
+## factor 0.0 = this emotion, 1.0 = the other emotion.
 func blend_with(other: AnimaleseEmotion, factor: float) -> AnimaleseEmotion:
 	if other == null:
 		push_warning("AnimaleseEmotion.blend_with(): other emotion is null, returning copy of this emotion.")
@@ -96,16 +93,16 @@ func blend_with(other: AnimaleseEmotion, factor: float) -> AnimaleseEmotion:
 	return result
 
 
-# ==================== PRESETS ESTATICOS ====================
+# ==================== STATIC PRESETS ====================
 
-## Crea una emocion neutral (sin modificaciones).
+## Neutral emotion (no modifications).
 static func neutral() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "neutral"
 	return e
 
 
-## Emocion feliz: tono alto, rapido, energico.
+## Happy emotion: higher pitch, faster, energetic.
 static func happy() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "happy"
@@ -118,7 +115,7 @@ static func happy() -> AnimaleseEmotion:
 	return e
 
 
-## Emocion triste: tono bajo, lento, apagado.
+## Sad emotion: lower pitch, slower, dampened.
 static func sad() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "sad"
@@ -132,7 +129,7 @@ static func sad() -> AnimaleseEmotion:
 	return e
 
 
-## Emocion enfadada: tono bajo, fuerte, agresivo.
+## Angry emotion: lower pitch, louder, aggressive.
 static func angry() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "angry"
@@ -147,7 +144,7 @@ static func angry() -> AnimaleseEmotion:
 	return e
 
 
-## Emocion asustada: tono alto, tembloroso, entrecortado.
+## Scared emotion: high pitch, trembling, broken.
 static func scared() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "scared"
@@ -162,7 +159,7 @@ static func scared() -> AnimaleseEmotion:
 	return e
 
 
-## Emocion nerviosa: rapido, tembloroso, variable.
+## Nervous emotion: fast, trembling, variable.
 static func nervous() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "nervous"
@@ -177,7 +174,7 @@ static func nervous() -> AnimaleseEmotion:
 	return e
 
 
-## Emocion emocionada/excitada: muy rapido, tono alto, energico.
+## Excited emotion: very fast, high pitch, energetic.
 static func excited() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "excited"
@@ -192,7 +189,7 @@ static func excited() -> AnimaleseEmotion:
 	return e
 
 
-## Emocion cansada/aburrida: muy lento, monotono, apagado.
+## Tired / bored emotion: very slow, monotone, dampened.
 static func tired() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "tired"
@@ -206,7 +203,7 @@ static func tired() -> AnimaleseEmotion:
 	return e
 
 
-## Emocion susurrada: voz susurrada, intima.
+## Whispered emotion: hushed, intimate.
 static func whisper() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "whisper"
@@ -217,11 +214,11 @@ static func whisper() -> AnimaleseEmotion:
 	e.prosody_mul = 0.4
 	e.breathiness_add = 0.25
 	e.brightness_add = -0.1
-	e.whisper_add = 1.0  # Susurro completo
+	e.whisper_add = 1.0  # Full whisper.
 	return e
 
 
-## Emocion misteriosa: susurro parcial, lento, misterioso.
+## Mysterious emotion: partial whisper, slow, mysterious.
 static func mysterious() -> AnimaleseEmotion:
 	var e := AnimaleseEmotion.new()
 	e.emotion_name = "mysterious"
@@ -232,11 +229,11 @@ static func mysterious() -> AnimaleseEmotion:
 	e.prosody_mul = 0.5
 	e.breathiness_add = 0.15
 	e.brightness_add = -0.15
-	e.whisper_add = 0.5  # Medio susurro
+	e.whisper_add = 0.5  # Half whisper.
 	return e
 
 
-## Obtiene una emocion por nombre.
+## Look up an emotion by name.
 static func get_by_name(name: String) -> AnimaleseEmotion:
 	match name.to_lower():
 		"neutral": return neutral()
