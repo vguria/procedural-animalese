@@ -41,13 +41,13 @@ This one file is the heart of the plugin. Flow for a `speak()` call:
 4. **Synthesis.** For each token, `_render_phoneme[_dict]()` builds a `PhonemeConfig` (kind, voiced, formants, is_vowel) then runs source+filter synthesis: glottal-ish source (voiced) or noise (fricatives) → parallel biquad band-pass filters at F1/F2/F3 (optionally F4/F5 when `use_extended_formants`) → ADSR envelope → coarticulation crossfade with the previous/next phoneme's formants. Prosody (`_prosody_pitch_mul*`) tilts pitch across the phrase based on `?`/`!`/statement scan (`_scan_phrase`). Vibrato, jitter, breath noise, whisper mix, and edge fades are applied per-phoneme.
 5. **Playback.** Segments are fed frame-by-frame to an `AudioStreamGenerator` playing on a dedicated `"Animalese"` audio bus (auto-created with EQ+compressor if `ensure_audio_bus`/`auto_add_bus_effects`).
 
-Synthesis has a single kernel: `_synthesize_from_dict()` (which internally calls `_render_phoneme_dict()`, `_phoneme_for_token_dict()`, `_peek_next_formants_dict()`, `_prosody_pitch_mul_dict()`). It takes a serialized `Dictionary` produced by `_serialize_voice()` because Godot Resources aren't thread-safe. Every entry point serializes the voice up front and calls the kernel:
+Synthesis lives in a separate pure static class, `AnimaleseSynth` (`runtime/animalese_synth.gd`). The main node calls `AnimaleseSynth.synthesize()`, which internally uses `_render_phoneme()`, `_phoneme_for_token()`, `_peek_next_formants()`, `_prosody_pitch_mul()`, etc. It takes a serialized `Dictionary` produced by `AnimaleseSynth.serialize_voice()` because Godot Resources aren't thread-safe. Every entry point serializes the voice up front and calls the kernel:
 
 - `speak` / `speak_for` / `speak_with_emotion` / `speak_markup` → `_speak_internal*` → kernel (sync or via `WorkerThreadPool` when `threaded_synthesis = true`, default).
 - `synthesize_to_buffer` / `export_to_wav` → kernel directly, sync.
 - Worker path posts results back with `call_deferred` → `_on_synthesis_complete`, carrying the sample buffer AND the timing markers the kernel produced (no separate dry pass). A `_stop_generation` counter invalidates stale callbacks after `stop_all()`.
 
-Timing markers (`TimingMarker`, `MarkerType.PHONEME/WORD/END`) are emitted inline during synthesis. `_collect_timing_markers()` runs the same tokenization + duration math *without* the DSP and is used only on cache hits to rebuild the marker track for a cached sample buffer.
+Timing markers (`AnimaleseSynth.TimingMarker`, `AnimaleseSynth.MarkerType.PHONEME/WORD/END`) are emitted inline during synthesis. `AnimaleseSynth.collect_timing_markers()` runs the same tokenization + duration math *without* the DSP and is used only on cache hits to rebuild the marker track for a cached sample buffer. `BiquadBandpass`, `PhonemeConfig`, and `PhraseInfo` are inner classes of `AnimaleseSynth` — the main node never references them.
 
 ### Timing, visemes, and signals
 
@@ -80,4 +80,4 @@ Timing markers (`TimingMarker`, `MarkerType.PHONEME/WORD/END`) are emitted inlin
 - The editor plugin script and any script that must run in-editor use `@tool`. `run_in_editor` on `ProceduralAnimalese` is the runtime-side toggle for in-editor playback (preview node in the dock).
 - Comments in `animalese_voice.gd`, `animalese_emotion.gd`, and older runtime files are Spanish; newer code and public docs are English. Match the surrounding file's language when editing.
 - Never mutate a user's `AnimaleseVoice` resource in place — clone via `duplicate()` or the emotion apply path.
-- All DSP changes go in the single `_synthesize_from_dict` / `_render_phoneme_dict` pair. Both are safe to call from a worker thread (no member-state access beyond `self._env_adsr` / `self._soft_clip_in_place` / `self._append_silence_sr` / `self._apply_edge_fade`, which are pure helpers).
+- All DSP changes go in `runtime/animalese_synth.gd` — every method there is `static` and only reads its arguments, so nothing in that file is allowed to touch instance state or emit signals. Anything that needs to interact with the node lives in `runtime/procedural_animalese.gd`.
